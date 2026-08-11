@@ -1,1 +1,24 @@
-<p>projects-section works!</p>
+<section id="projects" class="projects">
+  <div class="projects-container">
+
+    <div class="section-heading">
+      <p class="eyebrow">PROJECTS</p>
+
+      <h2>
+        What I've
+        <span>made.</span>
+      </h2>
+
+      <p class="section-description">
+        The following is a selection of software, data science, and machine learning projects. Academic projects are also included.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+      <app-project-card [project]="project" />
+      }
+    </div>
+
+  </div>
+</section>

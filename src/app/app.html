@@ -1,5 +1,13 @@
-<app-navbar></app-navbar>
+<div class="app">
+  <app-navbar />
 
-<router-outlet />
+  <main class="main-content">
+    <app-hero />
+    <router-outlet />
+    <app-about />
+    <app-projects-section />
+    <app-contact/>
+  </main>
 
-<app-footer></app-footer>
+  <app-footer />
+</div>

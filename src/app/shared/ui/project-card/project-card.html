@@ -1,1 +1,71 @@
-<p>project-card works!</p>
+<article class="project-card">
+
+  @if (project.image) {
+  <div class="project-image">
+    <img [src]="project.image" [alt]="project.title" />
+  </div>
+  }
+
+  <div class="project-content">
+
+    <div class="project-header">
+      <h3>{{ project.title }}</h3>
+
+      @if (project.featured) {
+      <span class="featured">
+        FEATURED
+      </span>
+      }
+      
+      @if (project.academic) {
+      <span class="academic">
+        ACADEMIC
+      </span>
+      }
+
+    </div>
+
+    <p class="description">
+      {{ project.description }}
+    </p>
+
+    @if (project.tags.length > 0) {
+    <div class="tags">
+      @for (tag of project.tags; track tag) {
+      <span class="tag">
+        {{ tag }}
+      </span>
+      }
+    </div>
+    }
+
+    @if (project.technologies?.length) {
+    <div class="technologies">
+      @for (technology of project.technologies; track technology) {
+      <span>
+        {{ technology }}
+      </span>
+      }
+    </div>
+    }
+
+    <div class="project-links">
+
+      @if (project.github) {
+      <a [href]="project.github" target="_blank" rel="noopener noreferrer">
+        GitHub
+        <span>↗</span>
+      </a>
+      }
+
+      @if (project.kaggle) {
+      <a [href]="project.kaggle" target="_blank" rel="noopener noreferrer">
+        Kaggle
+        <span>↗</span>
+      </a>
+      }
+
+    </div>
+
+  </div>
+</article>

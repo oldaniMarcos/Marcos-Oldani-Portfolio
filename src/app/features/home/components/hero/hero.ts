@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
-export class Hero {}
+export class Hero {
+
+  private viewportScroller = inject(ViewportScroller);
+
+  scrollTo(section: string): void {
+    this.viewportScroller.scrollToAnchor(section);
+  }
+
+}
