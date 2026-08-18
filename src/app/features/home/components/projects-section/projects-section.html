@@ -16,9 +16,18 @@
 
     <div class="projects-grid">
       @for (project of projects; track project.title) {
-      <app-project-card [project]="project" />
+      <app-project-card [project]="project" (linksClick)="openLinks(project)" />
       }
     </div>
 
   </div>
+
+  @if (selectedProject) {
+    <app-project-links-dialog 
+      [title]="selectedProject.title"
+      [links]="selectedProject.links!"
+      (close)="closeLinks()"
+    />
+  }
+
 </section>

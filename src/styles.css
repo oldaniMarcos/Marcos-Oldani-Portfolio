@@ -11,6 +11,10 @@ html {
   scroll-margin-top: 72px;
 }
 
+body.dialog-open {
+  overflow: hidden;
+}
+
 /* ─── Design tokens ──────────────────────────────────────────────────────── */
 
 :root {

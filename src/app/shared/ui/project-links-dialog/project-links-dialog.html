@@ -1,0 +1,24 @@
+<div class="dialog-backdrop" (click)="onBackdropClick($event)">
+  <div class="dialog" role="dialog" [attr.aria-label]="title + ' links'">
+
+    <div class="dialog-header">
+      <div class="dialog-title-group">
+        <p class="dialog-eyebrow">LINKS</p>
+        <h3 class="dialog-title">{{ title }}</h3>
+      </div>
+      <button class="dialog-close" (click)="close.emit()" aria-label="Close dialog">✕</button>
+    </div>
+
+    <ul class="dialog-links">
+      @for (link of links; track link.label) {
+      <li class="dialog-link-item">
+        <span class="link-label">{{ link.label }}</span>
+        <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="link-anchor">
+          Open <span class="link-arrow">↗</span>
+        </a>
+      </li>
+      }
+    </ul>
+
+  </div>
+</div>

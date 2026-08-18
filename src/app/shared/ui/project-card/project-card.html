@@ -65,7 +65,22 @@
       </a>
       }
 
+      @if (project.links?.length) {
+      <button class="links-btn" (click)="openLinks()">
+        Links <span>↗</span>
+      </button>
+      }
+
     </div>
 
   </div>
+
+  <!-- @if (linksOpen) {
+  <app-project-links-dialog
+    [links]="project.links!"
+    [title]="project.title"
+    (close)="linksOpen = false"
+  />
+  } -->
+
 </article>

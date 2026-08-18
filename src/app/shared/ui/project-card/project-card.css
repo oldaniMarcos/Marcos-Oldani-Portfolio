@@ -14,6 +14,8 @@
   transition:
     border-color 0.2s ease,
     transform 0.2s ease;
+
+  height: 100%;
 }
 
 .project-card:hover {
@@ -186,6 +188,37 @@
 .project-links span {
   font-size: 14px;
 }
+
+/* Links button */
+
+.links-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.links-btn:hover {
+  color: var(--accent);
+}
+
+.links-btn span {
+  font-size: 14px;
+}
+
 
 /* Mobile */
 
