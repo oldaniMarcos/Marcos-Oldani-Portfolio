@@ -128,5 +128,33 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/oldaniMarcos/TPI-Soporte',
 
     academic: true,
-  }
+  },
+
+  {
+    title: 'Veterinary Management System',
+
+    description: 'Fullstack web application for managing clients, pets, veterinary appointments, payments, supplies, and more.',
+
+    image: 'projects/vet-system.png',
+
+    tags: [
+      'Software Development',
+      'Web Development',
+    ],
+
+    technologies: [
+      'JavaScript',
+      'Angular',
+      'NestJS',
+      'TypeORM',
+      'MySQL',
+    ],
+
+    links: [
+      { label: 'Frontend', url: 'https://github.com/oldaniMarcos/TPI-Seminario-Frontend'},
+      { label: 'Backend', url: 'https://github.com/oldaniMarcos/TPI-Seminario-Backend'},
+    ],
+
+    academic: true,
+  },
 ];
