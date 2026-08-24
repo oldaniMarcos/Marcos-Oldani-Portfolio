@@ -78,6 +78,29 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    title: "Sysarmy Salary Survey Dashboard",
+
+    description:
+      "Interactive Power BI dashboard analyzing salary trends, professional profiles, education, employment characteristics, and technology usage in Argentina's technology industry. The project includes extensive data preparation with Power Query, DAX measures and use of relationships for analyzing multi-valued fields.",
+
+    image: "projects/powerbi_sysarmy.gif",
+    
+    tags: [
+      "Data Analysis",
+      "Business Intelligence",
+      "Data Visualization"
+    ],
+
+    technologies: [
+      "Power BI",
+      "Power Query",
+      "DAX"
+    ],
+
+    github: "https://github.com/oldaniMarcos/Power-BI-sysarmy-Salary-Survey",
+  },
+
+  {
     title: 'Fruit and Vegetable Classification',
     description:
       'Image classification experiments comparing different deep learning architectures for fruit and vegetable recognition.',
