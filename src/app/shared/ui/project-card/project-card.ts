@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project, projectAnchorId } from '../../../data/projects.data';
+import { ProjectMedia } from '../project-media/project-media';
 import { ProjectLinksDialog } from '../project-links-dialog/project-links-dialog';
 
 @Component({
   selector: 'app-project-card',
-  imports: [],
+  imports: [ProjectMedia],
   templateUrl: './project-card.html',
   styleUrl: './project-card.css',
 })

@@ -1,0 +1,66 @@
+@if (images.length > 0) {
+  <div
+    class="project-media"
+    role="group"
+    aria-roledescription="carousel"
+    [attr.aria-label]="label"
+    (keydown)="onKeydown($event)"
+  >
+    <div
+      class="project-media-slide"
+      role="group"
+      aria-roledescription="slide"
+      aria-live="polite"
+      [style.aspect-ratio]="aspectRatio"
+      [class.swipeable]="images.length > 1"
+      [attr.aria-label]="'Image ' + (currentIndex + 1) + ' of ' + images.length"
+      (pointerdown)="onPointerDown($event)"
+      (pointerup)="onPointerUp($event)"
+      (pointercancel)="onPointerCancel()"
+      (click)="onSlideClick($event)"
+    >
+      <img
+        [src]="images[currentIndex].src"
+        [alt]="images[currentIndex].alt"
+        loading="lazy"
+        decoding="async"
+        draggable="false"
+      />
+    </div>
+
+    @if (images.length > 1) {
+      <div class="carousel-controls">
+        <button
+          class="carousel-arrow carousel-previous"
+          type="button"
+          aria-label="Previous image"
+          (click)="previous(); $event.stopPropagation()"
+        >
+          ‹
+        </button>
+
+        <div class="carousel-indicators" role="group" aria-label="Choose an image">
+        @for (image of images; track image.src; let index = $index) {
+          <button
+            class="carousel-indicator"
+            [class.active]="index === currentIndex"
+            type="button"
+            [attr.aria-label]="'Show image ' + (index + 1)"
+            [attr.aria-pressed]="index === currentIndex"
+            (click)="showImage(index); $event.stopPropagation()"
+          ></button>
+        }
+        </div>
+
+        <button
+          class="carousel-arrow carousel-next"
+          type="button"
+          aria-label="Next image"
+          (click)="next(); $event.stopPropagation()"
+        >
+          ›
+        </button>
+      </div>
+    }
+  </div>
+}

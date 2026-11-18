@@ -1,8 +1,12 @@
 <article class="project-card" [id]="projectAnchorId(project)">
 
-  @if (project.image) {
+  @if (project.images?.length) {
   <div class="project-image">
-    <img [src]="project.image" [alt]="project.title" />
+    <app-project-media
+      [images]="project.images ?? []"
+      [label]="project.title + ' images'"
+      [aspectRatio]="project.mediaAspectRatio ?? '16 / 10'"
+    />
   </div>
   }
 

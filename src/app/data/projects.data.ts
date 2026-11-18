@@ -3,11 +3,17 @@ export interface ProjectLink {
   url: string;
 }
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
   title: string;
   description: string;
 
-  image?: string;
+  images?: ProjectImage[];
+  mediaAspectRatio?: string;
 
   tags: string[];
   technologies?: string[];
@@ -32,25 +38,43 @@ export function projectAnchorId(project: Project): string {
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Vehicle Detection and Tracking',
+    title: 'BirdNET Bird Monitoring',
     description:
-      'A computer vision system for detecting, classifying, and tracking vehicles in video using YOLO and ByteTrack.',
+      'A proof of concept for acoustic bird monitoring in a nature reserve in Misiones. An Android app identifies birds from their calls on-device with BirdNET V2.4, syncs the detections to Supabase, and a web dashboard shows the species recorded.',
 
-    image: 'projects/vehicle-detection.png',
+    images: [
+      {
+        src: 'projects/birdnet-web.png',
+        alt: 'BirdNET bird monitoring web dashboard',
+      },
+      {
+        src: 'projects/birdnet-app.jpeg',
+        alt: 'BirdNET bird monitoring mobile app',
+      }
+    ],
+    mediaAspectRatio: '4 / 3',
 
     tags: [
-      'Computer Vision',
       'Machine Learning',
+      'Mobile Development',
+      'Web Development',
     ],
 
     technologies: [
-      'Python',
-      'YOLO',
-      'OpenCV',
-      'ByteTrack',
+      'Kotlin',
+      'BirdNET',
+      'LiteRT',
+      'Supabase',
+      'SQLite',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
     ],
 
-    github: 'https://github.com/oldaniMarcos/OpenCV-Vehicle-Detection',
+    // github: 'PENDIENTE',
+    links: [
+      { label: 'Live site', url: 'https://observatorio-aves.pages.dev/' },
+    ],
 
     featured: true,
   },
@@ -59,7 +83,12 @@ export const PROJECTS: Project[] = [
     title: 'Credit Card Fraud Predictions',
     description: 'A comparison of different machine learning algorithms for detecting fraudulent transactions, including KNN, Logistic Regression, K-Means, LightGBM, XGBoost.',
 
-    image: 'projects/credit-card-fraud.jpeg',
+    images: [
+      {
+        src: 'projects/credit-card-fraud.jpeg',
+        alt: 'Illustration of a credit card against a data network background',
+      },
+    ],
 
     tags: [
       'Machine Learning',
@@ -87,12 +116,44 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    title: 'Vehicle Detection and Tracking',
+    description:
+      'A computer vision system for detecting, classifying, and tracking vehicles in video using YOLO and ByteTrack.',
+
+    images: [
+      {
+        src: 'projects/vehicle-detection.png',
+        alt: 'Vehicle detection and tracking over a highway video frame',
+      },
+    ],
+
+    tags: [
+      'Computer Vision',
+      'Machine Learning',
+    ],
+
+    technologies: [
+      'Python',
+      'YOLO',
+      'OpenCV',
+      'ByteTrack',
+    ],
+
+    github: 'https://github.com/oldaniMarcos/OpenCV-Vehicle-Detection',
+  },
+
+  {
     title: "Sysarmy Salary Survey Dashboard",
 
     description:
       "Interactive Power BI dashboard analyzing salary trends, professional profiles, education, employment characteristics, and technology usage in Argentina's technology industry. The project includes extensive data preparation with Power Query, DAX measures and use of relationships for analyzing multi-valued fields.",
 
-    image: "projects/powerbi_sysarmy.gif",
+    images: [
+      {
+        src: 'projects/powerbi_sysarmy.gif',
+        alt: "Power BI salary survey dashboard with charts about Argentina's technology sector",
+      },
+    ],
     
     tags: [
       "Data Analysis",
@@ -114,7 +175,12 @@ export const PROJECTS: Project[] = [
     description:
       'Image classification experiments comparing different deep learning architectures for fruit and vegetable recognition.',
 
-    image: 'projects/fruits-vegetables-classification.png',
+    images: [
+      {
+        src: 'projects/fruits-vegetables-classification.png',
+        alt: 'Collage of fruit and vegetable images used by the classifier',
+      },
+    ],
 
     tags: [
       'Deep Learning',
@@ -139,7 +205,12 @@ export const PROJECTS: Project[] = [
 
     description: 'An interactive dashboard for analyzing stocks through historical price data, technical indicators, financial news, and AI-generated summaries.',
 
-    image: 'projects/stock-dashboard-light.png',
+    images: [
+      {
+        src: 'projects/stock-dashboard-light.png',
+        alt: 'Stock analysis dashboard showing a price chart, indicators, news, and summary',
+      },
+    ],
 
     tags: [
       'Software Development',
@@ -167,7 +238,12 @@ export const PROJECTS: Project[] = [
 
     description: 'Fullstack web application for managing clients, pets, veterinary appointments, payments, supplies, and more.',
 
-    image: 'projects/vet-system.png',
+    images: [
+      {
+        src: 'projects/vet-system.png',
+        alt: 'Veterinary management dashboard with client and appointment records',
+      },
+    ],
 
     tags: [
       'Software Development',
