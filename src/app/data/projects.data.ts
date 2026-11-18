@@ -150,7 +150,19 @@ export const PROJECTS: Project[] = [
 
     images: [
       {
-        src: 'projects/powerbi_sysarmy.gif',
+        src: 'projects/powerbi_1.png',
+        alt: "Power BI salary survey dashboard with charts about Argentina's technology sector",
+      },
+      {
+        src: 'projects/powerbi_2.png',
+        alt: "Power BI salary survey dashboard with charts about Argentina's technology sector",
+      },
+      {
+        src: 'projects/powerbi_3.png',
+        alt: "Power BI salary survey dashboard with charts about Argentina's technology sector",
+      },
+      {
+        src: 'projects/powerbi_4.png',
         alt: "Power BI salary survey dashboard with charts about Argentina's technology sector",
       },
     ],
