@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Project } from '../../../data/projects.data';
+import { Project, projectAnchorId } from '../../../data/projects.data';
 import { ProjectLinksDialog } from '../project-links-dialog/project-links-dialog';
 
 @Component({
@@ -11,6 +11,7 @@ import { ProjectLinksDialog } from '../project-links-dialog/project-links-dialog
 export class ProjectCard {
 
   @Input({required: true}) project!: Project;
+  readonly projectAnchorId = projectAnchorId;
 
   // linksOpen = false;
 

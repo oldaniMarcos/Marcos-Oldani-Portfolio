@@ -8,39 +8,33 @@ html {
 .about,
 .projects,
 .contact {
-  scroll-margin-top: 72px;
+  scroll-margin-top: 76px;
 }
 
 body.dialog-open {
   overflow: hidden;
 }
 
-/* ─── Design tokens ──────────────────────────────────────────────────────── */
-
 :root {
-  /* Surface / border colors — purple-tinted darks */
-  --surface-1: hsla(280, 40%, 10%, 0.6);
-  --surface-2: hsla(280, 35%, 13%, 0.5);
-  --border-subtle: hsla(280, 30%, 22%, 0.6);
-  --border-muted:  hsla(280, 28%, 18%, 0.5);
+  color-scheme: light;
 
-  /* Text */
-  --text-primary:   #f0ecff;
-  --text-secondary: #a89bc2;
-  --text-muted:     #6e6585;
+  --canvas: #f1f2ef;
+  --surface-1: #f8f8f5;
+  --surface-2: #e7e9e3;
+  --border-subtle: #d3d7d0;
+  --border-muted: #e1e4de;
 
-  /* Accent — violet */
-  --accent:        hsl(275, 80%, 68%);
-  --accent-dim:    hsla(275, 80%, 68%, 0.15);
-  --accent-border: hsla(275, 80%, 55%, 0.45);
+  --text-primary: #252923;
+  --text-secondary: #58615b;
+  --text-muted: #6d756e;
 
-  /* Accent - blue */
-  --accent-blue:        hsl(210, 100%, 60%);
-  --accent-blue-dim:    hsla(210, 100%, 60%, 0.15);
-  --accent-blue-border: hsla(210, 100%, 50%, 0.45);
+  --accent: #655079;
+  --accent-dim: #eeebf1;
+  --accent-border: #c9bfd1;
+  --accent-blue: #52636d;
+  --accent-blue-dim: #e9edef;
+  --accent-blue-border: #c1cbd0;
 }
-
-/* ─── Reset / base ───────────────────────────────────────────────────────── */
 
 *,
 *::before,
@@ -57,47 +51,72 @@ body {
 
 body {
   min-height: 100vh;
-
-  background: hsla(304, 100%, 10%, 1);
-  background: -webkit-linear-gradient(315deg, hsla(304, 100%, 10%, 1) 0%, hsla(280, 95%, 8%, 1) 40%, hsla(238, 100%, 6%, 1) 100%);
-  background: linear-gradient(315deg, hsla(304, 100%, 10%, 1) 0%, hsla(280, 95%, 8%, 1) 40%, hsla(238, 100%, 6%, 1) 100%);
-  background-attachment: fixed;
-
+  background: var(--canvas);
   color: var(--text-primary);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
-/* ─── Shared section styles ──────────────────────────────────────────────── */
-
 .section-container {
-  max-width: 1100px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
 .eyebrow {
-  margin: 0 0 20px;
-  color: var(--accent);
-  font-family: monospace;
+  margin: 0 0 16px;
+  color: var(--text-secondary);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.04em;
 }
 
 .section-heading h2 {
   margin: 0;
   color: var(--text-primary);
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.1;
-  letter-spacing: -2px;
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
 }
 
 .section-heading h2 span {
-  color: var(--text-secondary);
+  color: inherit;
 }
 
 .section-description {
-  margin: 24px 0 0;
+  max-width: 620px;
+  margin: 20px 0 0;
   color: var(--text-secondary);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.65;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 680px) {
+  .hero,
+  .about,
+  .projects,
+  .contact {
+    scroll-margin-top: 104px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

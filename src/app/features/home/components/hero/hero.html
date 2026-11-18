@@ -1,28 +1,47 @@
 <section id="hero" class="hero">
-  <div class="hero-content">
-    <p class="eyebrow">SYSTEMS ENGINEERING · DATA · AI</p>
+  <div class="hero-layout">
+    <div class="hero-content">
+      <p class="eyebrow">Systems engineering · Data · AI</p>
 
-    <h1>
-      Marcos Oldani<br />
-    </h1>
+      <h1>Marcos Oldani</h1>
 
-    <p class="description">
-      Systems Engineering student focused on data science, software development, and artificial intelligence.
-    </p>
+      <p class="description">
+        Systems Engineering student focused on data science, software development, and artificial intelligence.
+      </p>
 
-    <div class="hero-actions">
-      <a class="primary-button" (click)="scrollTo('projects')">
-        View my work
-      </a>
+      <div class="hero-actions">
+        <a class="primary-button" (click)="scrollTo('projects')">
+          View my work
+        </a>
 
-      <a class="secondary-button" (click)="scrollTo('contact')">
-        Contact me
-      </a>
+        <a class="secondary-button" (click)="scrollTo('contact')">
+          Contact me
+        </a>
+      </div>
+    </div>
+
+    <div class="featured-work">
+      <h2 class="featured-heading">Featured projects</h2>
+
+      <div class="featured-projects">
+        @for (project of featuredProjects; track project.title; let first = $first) {
+          <a
+            class="featured-project"
+            [class.featured-project-primary]="first"
+            [href]="'#' + projectAnchorId(project)"
+          >
+            @if (project.image) {
+              <div class="featured-project-image">
+                <img [src]="project.image" alt="" />
+              </div>
+            }
+
+            <div class="featured-project-copy">
+              <h3>{{ project.title }}</h3>
+            </div>
+          </a>
+        }
+      </div>
     </div>
   </div>
-
-  <!-- <div class="hero-decoration" aria-hidden="true">
-    <div class="grid"></div>
-    <div class="glow"></div>
-  </div> -->
 </section>

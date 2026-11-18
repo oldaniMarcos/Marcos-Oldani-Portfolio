@@ -21,6 +21,15 @@ export interface Project {
   academic?: boolean;
 }
 
+export function projectAnchorId(project: Project): string {
+  const slug = project.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+
+  return `project-${slug}`;
+}
+
 export const PROJECTS: Project[] = [
   {
     title: 'Vehicle Detection and Tracking',
@@ -181,3 +190,4 @@ export const PROJECTS: Project[] = [
     academic: true,
   },
 ];
+
